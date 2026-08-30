@@ -44,7 +44,7 @@ import keyword
 print("Keywords in Python:")
 print(keyword.kwlist)
 
-True = 10
+#True = 10
 
 """ Notes:
 Variables:

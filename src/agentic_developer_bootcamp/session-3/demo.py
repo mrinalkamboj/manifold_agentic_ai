@@ -6,7 +6,7 @@ app = FastAPI() # create an instance of the FastAPI class
 
 @app.get("/")
 def greeting():
-    return "Welcome to my Application created with FastAPI"
+    return "Mrinal is serving the Rest API with Fast API"
 
 @app.post("/add")
 def add(a: float, b: float):
