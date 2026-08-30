@@ -43,3 +43,18 @@ except ValidationError as e:
 # - error: str
 
 # On that, test with valid input, invalid input, and missing input.
+
+class AgentResponse(BaseModel): # this is a class that inherits from BaseModel
+    result: str
+    max_steps: int
+    status: str
+    error: str
+
+try:
+    response = AgentResponse(result="Problem solved", max_steps=10, status="success", error="None")
+except ValidationError as e:
+    for error in e.errors():
+        print(f"Location: {error['loc']}")
+        print(f"Message: {error['msg']}")
+        print(f"Type: {error['type']}")
+        print("--------------------------------")
