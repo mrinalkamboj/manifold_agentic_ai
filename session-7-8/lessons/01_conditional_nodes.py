@@ -51,7 +51,7 @@ builder.add_edge(START, "classify")
 builder.add_conditional_edges(
     "classify",
     route,
-    {"page_oncall": "page_oncall", "log_ticket": "log_ticket"},
+    {"page_oncall": "page_oncall", "log_ticket": "log_ticket"}, # string output from function : node name
 )
 builder.add_edge("page_oncall", END)
 builder.add_edge("log_ticket", END)
@@ -63,5 +63,5 @@ print("--------------------------------")
 high = graph.invoke({"messages": [HumanMessage(content="Checkout is failing for 40 percent of users.")]})
 print(high["result"])
 print("--------------------------------")
-low = graph.invoke({"messages": [HumanMessage(content="One user cannot reset their password.")]})
+low = graph.invoke({"messages": [HumanMessage(content="user is using thi")]})
 print(low["result"])
