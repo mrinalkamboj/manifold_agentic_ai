@@ -1,19 +1,21 @@
 """Concept: same graph as 02. Tools are imported from incident_tools.py."""
-from typing import TypedDict, Annotated
-from langchain_openai import ChatOpenAI
-from langchain_core.messages import HumanMessage, BaseMessage
-from langgraph.graph.message import add_messages
+
+from langchain_core.messages import HumanMessage
 from langgraph.prebuilt import ToolNode, tools_condition
-from langgraph.graph import START, StateGraph
-from dotenv import load_dotenv
-from incident_tools import TOOLS
-load_dotenv()
+from langgraph.graph import START, StateGraph, END
 
-model = ChatOpenAI(model="gpt-5.4-mini").bind_tools(TOOLS)
+#Import llm
+from agentic_developer_bootcamp.session_9_10_MCP.lessons.zero.init_llm import llm
 
+#Import tools
+from agentic_developer_bootcamp.session_9_10_MCP.lessons.third.incident_tools import TOOLS
 
-class State(TypedDict):
-    messages: Annotated[list[BaseMessage], add_messages]
+#Import state
+from agentic_developer_bootcamp.session_9_10_MCP.lessons.third.entities import State
+
+#Fetching the llm object separately and not binding the tools here
+#model = ChatOpenAI(model="gpt-5.4-mini").bind_tools(TOOLS)
+model = llm.bind_tools(TOOLS)
 
 
 def assistant(state: State):
@@ -26,6 +28,7 @@ builder.add_node("tools", ToolNode(TOOLS))
 builder.add_edge(START, "assistant")
 builder.add_conditional_edges("assistant", tools_condition)
 builder.add_edge("tools", "assistant")
+builder.add_edge("assistant",END)
 graph = builder.compile()
 
 print("Imported tools:", [tool.name for tool in TOOLS])

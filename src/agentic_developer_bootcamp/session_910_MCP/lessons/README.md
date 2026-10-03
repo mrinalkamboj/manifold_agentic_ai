@@ -31,3 +31,6 @@ Two routers show up in this folder:
 
 1. **You route** — a function you write, like `route()` in 01 and 08.
 2. **The model routes** — last AI message has `tool_calls`, so `tools_condition` goes to `tools`.
+
+## Git Repo
+### git clone https://github.com/manifoldailearning/agentic-developer-bootcamp.git

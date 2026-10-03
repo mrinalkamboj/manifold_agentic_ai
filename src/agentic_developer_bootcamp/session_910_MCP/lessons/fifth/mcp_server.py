@@ -1,10 +1,10 @@
 # MCP Server — same incident tool, hosted for another process to load
-from fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP("Incident MCP Server")
 
 
-@mcp.tool
+@mcp.tool()
 def calculate_incident_impact(failed_requests: int, total_requests: int, baseline_error_rate_pct: float) -> dict:
     """Calculate request failure percentage and percentage-point change from baseline.
     Use counts from the same observation window.
@@ -13,7 +13,7 @@ def calculate_incident_impact(failed_requests: int, total_requests: int, baselin
     return {"error_rate_pct": rate, "change_percentage_points": rate - baseline_error_rate_pct}
 
 
-@mcp.tool
+@mcp.tool()
 def multiply(a: float, b: float) -> float:
     """Multiplies two numbers together."""
     return a * b
