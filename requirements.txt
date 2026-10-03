@@ -11,3 +11,4 @@ mcp>=1.24.0,<2
 fastmcp>=3,<4
 fastmcp[apps]>=3,<4
 langchain_mcp_adapters
+pdfplumber
