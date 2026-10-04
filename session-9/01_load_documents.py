@@ -1,3 +1,7 @@
+"""
+pip install -qU langchain-postgres
+docker run --name pgvector-container -e POSTGRES_USER=langchain -e POSTGRES_PASSWORD=langchain -e POSTGRES_DB=langchain -p 6024:5432 -d pgvector/pgvector:pg16
+"""
 import pdfplumber
 from pathlib import Path
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -122,11 +126,13 @@ vector_store.add_documents(documents=documents, ids=[doc.metadata["chunk_id"] fo
 # Query the vector store
 query = "what is the Liability and Damages from the contract?"
 
-results = vector_store.similarity_search(query,k=5)
+# results = vector_store.similarity_search(query,k=5)
+results = vector_store.similarity_search_with_score(query, k=5)
 
-for result in results:
+# for result in results:
+for result, score in results:
     print(result.page_content)
     print(result.metadata)
-    # print(f"similarity: {result.similarity_score}")
+    print(f"score: {score}")
     print("--------------------------------")
 
