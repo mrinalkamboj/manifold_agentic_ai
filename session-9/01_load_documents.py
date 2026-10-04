@@ -6,6 +6,7 @@ import json
 pdf_path = Path(__file__).parent/"test_documents"/ "1810.04805v2.pdf"
 import hashlib
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_postgres.vectorstores import PGVector
 from dotenv import load_dotenv
 load_dotenv()
 import os
@@ -105,3 +106,27 @@ for embedding in embeddings[:3]:
 # # Save the embeddings to a JSON file
 with open("embeddings.json", "w") as f:
     json.dump(embeddings, f)
+
+# Load the embeddings to VectorStore
+
+connection = "postgresql+psycopg://langchain:langchain@localhost:6024/langchain" 
+
+collection_name = "my_docs"
+
+vector_store = PGVector( embeddings=OpenAIEmbeddings(model="text-embedding-3-small"), 
+collection_name=collection_name, 
+connection=connection, use_jsonb=True, )
+
+vector_store.add_documents(documents=documents, ids=[doc.metadata["chunk_id"] for doc in documents])
+
+# Query the vector store
+query = "what is the Liability and Damages from the contract?"
+
+results = vector_store.similarity_search(query,k=5)
+
+for result in results:
+    print(result.page_content)
+    print(result.metadata)
+    # print(f"similarity: {result.similarity_score}")
+    print("--------------------------------")
+
