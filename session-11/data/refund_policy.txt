@@ -1,0 +1,18 @@
+COMPANY REFUND POLICY
+
+Customers may request a refund within 14 days of payment.
+
+Refunds up to INR 5,000 can be approved automatically
+if the transaction was successful and no refund
+has previously been issued.
+
+Refunds above INR 5,000 and up to INR 20,000
+require approval from a Support Manager.
+
+Refunds above INR 20,000 require approval
+from both a Support Manager and Finance.
+
+An AI agent must not bypass these approval rules.
+
+After approval, an authorized payment service
+is responsible for initiating the refund.

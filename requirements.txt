@@ -13,3 +13,4 @@ fastmcp[apps]>=3,<4
 langchain_mcp_adapters
 pdfplumber
 langchain-postgres
+llama-index

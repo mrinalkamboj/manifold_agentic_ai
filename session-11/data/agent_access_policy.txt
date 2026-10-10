@@ -1,0 +1,18 @@
+ENTERPRISE AI AGENT ACCESS POLICY
+
+AI agents must follow least-privilege access.
+
+Agents may retrieve customer information only
+when the requesting user's permissions allow it.
+
+Customer payment card details must never
+be exposed to AI agents.
+
+Refund approval and refund execution
+are separate permissions.
+
+An agent with read-only access cannot
+execute a financial transaction.
+
+Access decisions must be enforced by
+an authorized backend service.
