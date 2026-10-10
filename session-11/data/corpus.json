@@ -1,0 +1,19 @@
+{
+  "name": "Acme Cloud — RAG Corpus",
+  "version": "2026-06-01",
+  "note": "Acme Cloud support docs for RAG evaluation.",
+  "chunks": [
+    {"id": "c01", "title": "Pro plan pricing", "text": "The Acme Cloud Pro plan costs $49 per month, billed monthly, and includes 5 user seats. Prices exclude applicable taxes."},
+    {"id": "c02", "title": "Team plan pricing", "text": "The Acme Cloud Team plan costs $99 per month and includes 15 user seats. Annual billing saves 20%."},
+    {"id": "c03", "title": "Enterprise plan", "text": "The Enterprise plan is custom-priced and adds SSO, audit logs, and a dedicated success manager. Contact sales for a quote."},
+    {"id": "c04", "title": "Adding and removing seats", "text": "Seats are managed in Settings > Billing > Seats. The Pro plan is capped at 5 seats; to exceed that, upgrade to Team (up to 15) or Enterprise. There is no unlimited-seats option."},
+    {"id": "c05", "title": "Refund policy", "text": "Refunds are issued within 30 days of the original purchase date. After 30 days, purchases are non-refundable. There are no exceptions to the 30-day window."},
+    {"id": "c06", "title": "Cancellation and downgrade", "text": "You may cancel or downgrade at any time from Settings > Billing. Cancellation takes effect at the end of the current billing period; no partial-month refunds are given for cancellation."},
+    {"id": "c07", "title": "Password reset", "text": "To reset your password, open the Login page, click Forgot Password, enter your account email, and follow the secure link. The reset link expires after 60 minutes."},
+    {"id": "c08", "title": "Two-factor authentication", "text": "Two-factor authentication (2FA) can be enabled in Settings > Security. Acme Cloud supports authenticator apps (TOTP) and SMS codes. Recovery codes are issued when 2FA is turned on."},
+    {"id": "c09", "title": "Accepted payment methods", "text": "Acme Cloud accepts Visa, Mastercard, American Express, and PayPal. We do not accept cryptocurrency, wire transfer, or cheque."},
+    {"id": "c10", "title": "Account lockout", "text": "After 5 failed login attempts an account is locked for 30 minutes. Wait 30 minutes or contact support for an immediate unlock after identity verification."},
+    {"id": "c11", "title": "Data export", "text": "Export your account data from Settings > Data > Export. Exports are delivered as a ZIP to the account owner's email and can take up to 1 hour for large accounts."},
+    {"id": "c12", "title": "Discount policy", "text": "Discounts are only available through published promotions and the 20% annual-billing saving. Support cannot generate ad-hoc discount codes on request."}
+  ]
+}
