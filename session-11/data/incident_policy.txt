@@ -1,0 +1,17 @@
+COMPANY INCIDENT MANAGEMENT POLICY
+
+SEV1 means a critical production outage.
+
+For SEV1 incidents:
+- On-call engineers must acknowledge within 10 minutes.
+- An Incident Commander must be assigned within 15 minutes.
+- Status updates must be shared every 30 minutes.
+
+SEV2 means significant degradation without
+a complete production outage.
+
+For SEV2 incidents:
+- Engineers must acknowledge within 30 minutes.
+- Status updates must be shared every 2 hours.
+
+All incidents must have an incident owner.
