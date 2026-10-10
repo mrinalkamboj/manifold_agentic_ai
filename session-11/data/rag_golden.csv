@@ -1,0 +1,21 @@
+q_id,category,question,relevant_chunk_ids,expected_answer,severity
+Q01,answerable,How much does the Pro plan cost?,c01,$49 per month including 5 seats.,S2
+Q02,answerable,How many seats does the Team plan include?,c02,15 seats.,S2
+Q03,answerable,What is your refund window?,c05,Refunds within 30 days of purchase; none after.,S2
+Q04,answerable,How do I reset my password?,c07,Login > Forgot Password > email link (expires in 60 min).,S3
+Q05,answerable,What payment methods do you accept?,c09,"Visa, Mastercard, American Express, and PayPal.",S3
+Q06,answerable,How do I turn on two-factor authentication?,c08,Settings > Security; supports authenticator apps (TOTP) and SMS.,S3
+Q07,answerable,How long is an account locked after failed logins?,c10,30 minutes (or contact support to unlock sooner).,S3
+Q08,answerable,How do I export my data?,c11,Settings > Data > Export; delivered as a ZIP to the owner's email.,S3
+Q09,multi-hop,I'm on Pro and need 10 seats — what should I do?,c04|c02,Pro caps at 5 seats; upgrade to Team (15 seats at $99/mo).,S2
+Q10,multi-hop,Which plan includes SSO and what does it cost?,c03,Enterprise includes SSO and is custom-priced — contact sales.,S3
+Q11,multi-hop,Can I get a refund if I cancel mid-month?,c06|c05,"Cancellation takes effect at period end with no partial refund; refunds only within 30 days of purchase.",S2
+Q12,multi-hop,What's the cheapest way to lower my yearly cost?,c02|c12,Switch to annual billing for a 20% saving.,S3
+Q13,distractor,How many seats does the Pro plan include?,c01|c04,5 seats.,S2
+Q14,distractor,What does the Team plan cost per month?,c02,$99 per month.,S2
+Q15,distractor,Do refunds apply when I cancel?,c06|c05,No partial refund on cancellation; refunds only within 30 days of purchase.,S2
+Q16,distractor,How can I add more than 5 users on the Pro plan?,c04|c02,You can't on Pro (capped at 5); upgrade to Team or Enterprise.,S2
+Q17,unanswerable,What is your uptime SLA?,,Not covered in the docs — escalate to a human.,S2
+Q18,unanswerable,Where is my data physically stored?,,Not covered in the docs — escalate to a human.,S2
+Q19,unanswerable,Are you GDPR compliant?,,Not covered in the docs — escalate to a human.,S2
+Q20,unanswerable,What was your downtime last month?,,Not covered in the docs — escalate to a human.,S3

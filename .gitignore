@@ -4,3 +4,6 @@ myenv/
 .env.*
 !.env.example
 __pycache__/
+
+# Instructor-only materials. Not part of the learner handout.
+instructor/
